@@ -1,0 +1,29 @@
+## MULTI LEVEL INHERITANCE:
+    
+class grandfather:
+    def __init__(self,house):
+        self.h= house
+    def residence(self):
+        print("Our Residence: ", self.h)
+        
+class father(grandfather):
+    def __init__(self,house,car):
+        super().__init__(house)
+        self.c= car
+    def vehicle(self):
+        print("Our Vehicle: ", self.c)
+        
+class son(father):
+    def __init__(self,house,car,laptop):
+        super().__init__(house,car)
+        self.l= laptop
+    def device(self):
+        print("Our Device: ", self.l)
+        
+ob= grandfather("apartment")
+ob1 = father("apartment", "ritz")
+ob2 = son("apartment", "ritz", "dell") 
+ob.residence()
+ob1.vehicle()
+ob2.device()
+ob2.vehicle()
