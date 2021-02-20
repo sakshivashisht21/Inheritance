@@ -1,0 +1,33 @@
+class source:
+    def __init__(self,src):
+        self.src= src
+    
+    def the_src(self):
+        print("We get many products from ", self.src)
+        
+class first(source):
+    def __init__(self,product1):
+        self.prod1= product1
+        
+    def first_prod(self):
+        print("First product we get is", self.prod1, "from",self.src)
+    
+class second(source):
+    def __init__(self,product2):
+        self.prod2= product2
+        
+    def second_prod(self):
+        print("Second product we get is", self.prod2, "from",self.src) 
+    
+class final(second,first):
+    def __init__(self,src,product1,product2,product3):
+        second.__init__(self,product2)
+        first.__init__(self,product1)
+        source.__init__(self, src)
+        self.prod3= product3
+        
+    def final_prod(self):
+        print("We can make", self.prod3, "from", self.prod1 , "and", self.prod2, "which we get from", self.src)
+    
+one= final("Tree","Wood","Rubber","Pencil")
+one.final_prod()
