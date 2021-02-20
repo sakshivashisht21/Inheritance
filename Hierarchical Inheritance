@@ -1,0 +1,26 @@
+## HIERARCHICAL INHERITANCE:
+    
+class batch:
+    def __init__(self,course):
+        self.course= course
+    def sub(self):
+        print("The course is: ", self.course)
+        
+class student1(batch):
+    def __init__(self,course, subject1):
+        super().__init__(course)
+        self.sub1 = subject1
+    def st1(self):
+        print("student 1 has: ",self.course, "course and ", self.sub1, "Subject")
+        
+class student2(batch):
+    def __init__(self,course, subject2):
+        super().__init__(course)
+        self.sub2 = subject2
+    def st2(self):
+        print("student 2 has: ",self.course, "course and ", self.sub2, "Subject")
+
+stu_1 = student1("MS Office", "Excel")
+stu_2 = student2("Data Analytics", "Python")
+stu_1.st1()
+stu_2.st2()
