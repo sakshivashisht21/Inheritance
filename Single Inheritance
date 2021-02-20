@@ -1,0 +1,24 @@
+## SINGLE INHERITANCE:
+
+class school:
+    def __init__(self,first,last):
+        self.f_name=first
+        self.l_name=last
+        self.fullname= first+" "+last
+        
+class Classroom(school):
+    def __init__(self,first,last,mark1,mark2):
+        super().__init__(first,last)
+        self.term1= mark1
+        self.term2= mark2
+        self.t_marks= mark1+mark2
+        
+    def __add__(self):
+        total_marks=self.t_marks
+        return total_marks
+        
+    def result(self):
+        print("Total marks of",self.fullname, "is", self.t_marks)
+        
+one = Classroom("Mark","Grey",75, 90)
+one.result()
