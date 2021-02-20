@@ -1,4 +1,4 @@
-## MULTIPLE INHERITANCE: 
+## MULTIPLE INHERITANCE:  
     
 class year1:
     def __init__(self,sub1,sub2):
@@ -17,12 +17,13 @@ class year2:
         print(self.bst + self.eco)
         
 class total(year1, year2):
-    def __init__(self, sub1, sub2, sub3, sub4):
-        super().__init__(sub1,sub2,sub3, sub4)
-        pass
+    def __init__(self, sub1, sub2, sub3, sub4,name):
+        year1.__init__(self,sub1,sub2)
+        year2.__init__(self,sub3, sub4)
+        self.name= name
         
-mark1= year1(60,70)
-mark2= year2(80,90)
-
-mark1.yr1()
-mark2.yr2()
+    def result(self):
+        print("The marks of", self.name, "are: ", self.eng, "," , self.math, ",", self.bst,"and" , self.eco)
+        
+obj1= total(67,89,87,75,"sakshi")
+obj1.result()
