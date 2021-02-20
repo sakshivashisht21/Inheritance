@@ -1,0 +1,28 @@
+## MULTIPLE INHERITANCE: 
+    
+class year1:
+    def __init__(self,sub1,sub2):
+        self.eng= sub1
+        self.math= sub2
+        
+    def yr1(self):
+        print(self.eng + self.math)
+        
+class year2:
+    def __init__(self,sub3,sub4):
+        self.bst = sub3
+        self.eco= sub4
+        
+    def yr2(self):
+        print(self.bst + self.eco)
+        
+class total(year1, year2):
+    def __init__(self, sub1, sub2, sub3, sub4):
+        super().__init__(sub1,sub2,sub3, sub4)
+        pass
+        
+mark1= year1(60,70)
+mark2= year2(80,90)
+
+mark1.yr1()
+mark2.yr2()
